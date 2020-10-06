@@ -77,13 +77,12 @@ class DashboardView(View):
                 spouse_name = request.POST.get("spouse_name")
                 spouse_occupation = request.POST.get("spouse_occupation")
                 no_children = request.POST.get("no_children")
-                cimg = request.POST.get("cimg")
 
                 # and updating it to the database both customer and dvd respectively.
                 update_customer = Customer.objects.filter(person_ptr_id = cid).update(firstname = fname, 
                 lastname = lname, phone = phone, email = email, street = street, barangay = barangay, city = city, province = province,
                 zip_code = zip_code, country = country, birthdate = birthdate, gender = gender, status = status,
-                spouse_name = spouse_name, spouse_occupation = spouse_occupation, no_children = no_children, cimg = cimg)
+                spouse_name = spouse_name, spouse_occupation = spouse_occupation, no_children = no_children)
 
                 # printing it to the cmd for confirmation and for checking if it worked.
                 print('Customer Details Updated Successfully!')

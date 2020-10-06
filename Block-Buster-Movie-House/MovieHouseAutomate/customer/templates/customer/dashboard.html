@@ -313,8 +313,8 @@
 												<div class="form-row ml-1">
 													<div class="form-group">
 														<label for="cimg" class="sr-only">Profile picture</label>
-														{% if customer.cimg %}
-														<img src="{{ entry.cimg.url }}" class="form-control-file" name="cimg" id="cimg">
+														{% if customers.cimg %}
+														<img src="{{ entry.cimg.url }}" class="form-control-file" id="cimg">
 														{% else %}
 														<p>No Picture</p>
 														{% endif %}
