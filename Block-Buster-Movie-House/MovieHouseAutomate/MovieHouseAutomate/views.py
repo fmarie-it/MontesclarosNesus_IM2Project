@@ -10,3 +10,7 @@ class LandingView(View):
 class IndexView(View):
 	def get(self, request):
 		return render(request, 'index.html')
+
+class OrdersView(View):
+	def get(self, request):
+		return render(request, 'orders.html')		
