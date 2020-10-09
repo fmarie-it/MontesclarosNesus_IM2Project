@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('customer.urls')),
     path('index/', include('dvd.urls')),
+    path('index/', include('orders.urls')),
     path('index',views.IndexView.as_view(), name="index_view"),
-    path('orders',views.OrdersView.as_view(), name="orders_view"),
     path('landing-page',views.LandingView.as_view(), name="landing_view"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
