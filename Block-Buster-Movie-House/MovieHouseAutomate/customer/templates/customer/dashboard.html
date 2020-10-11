@@ -191,7 +191,7 @@
 												<h6>Date Registerede</h6>
 												<div class="form-row">
 													<div class="form-group col-md-6">
-														<label for="date_registered" class="sr-only">First</label>
+														<label for="date_registered" class="sr-only">Date Registered</label>
 														<input name="date_registered" type="date" class="form-control" id="date_registered" value={{entry.date_registered|date:'Y-m-d'}} readonly>
 													</div>
 												</div>	
@@ -253,7 +253,7 @@
 												<div class="form-row">
 													<div class="form-group col-md-6">
 														<label for="email" class="sr-only">Email</label>
-														<input name="email" type="email" class="form-control" id="email" placeholder="sample@cit.edu" value={{entry.email}} 
+														<input name="email" type="email" class="form-control" id="email" placeholder="email@domain.com" value={{entry.email}} 
 														pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 													</div>
 												</div>
@@ -263,7 +263,7 @@
 												<div class="form-row">
 													<div class="form-group col-md-6">
 														<label for="phone" class="sr-only">Phone Number</label>
-														<input name="phone" type="tel" class="form-control" id="phone" placeholder="+639123456789" value={{entry.phone}} 
+														<input name="phone" type="tel" class="form-control" id="phone" placeholder="09/+639123456789" value={{entry.phone}} 
 														pattern="^(09|\+639)\d{9}$" required>
 													</div>
 												</div>
