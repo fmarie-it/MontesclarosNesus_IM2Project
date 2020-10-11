@@ -133,6 +133,7 @@
 							<ul class="dropdown-menu level1">
 								<li><a href="{% url 'customer:addcustomer_view' %}">Customer</a></li>
 								<li><a href="{% url 'dvd:adddvd_view' %}">DVD</a></li>
+								<li><a href="{% url 'orders:orders_view' %}">Orders</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -162,87 +163,69 @@
 		</div>
 	</div>
 </div>
-		<div class="buster-light">
-<div class="page-single">
-	<div class="container">
-		<div class="row ipad-width">
-			
-			<div class="col-md-3 col-sm-12 col-xs-12">
-				<div class="user-information">
-					<div class="user-img">
-						<a href="#"><img src="{% static 'images/uploads/user-img.png' %}" alt=""><br></a>
-						<a href="#" class="redbtn">Change avatar</a>
-					</div>
-					<div class="user-fav">
-						<p>Customer Details</p>
-						<ul>
-							<li  class="active"><a href="">Profile</a></li>
-						</ul>
-						<ul>
-							<li  class="active"><a href="">Settings</a></li>
-						</ul>
-						<ul>
-							<li  class="active"><a href="{% url 'landing_view' %}">Logout</a></li>
-						</ul>
-					</div>
+<div class="buster-light">
+	<div class="page-single">
+		<div class="container">
+			<div class="row ipad-width">
+				
+				<div class="col-md-3 col-sm-12 col-xs-12">
 				</div>
-			</div>
 
-			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="form-style-1 user-pro" action="#" id="">
-					<form action="#" method="POST" class="user" enctype="multipart/form-data">
-						{% csrf_token %}
-						<h4>Personal Information</h4>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>First Name</label>
-								<input id="customer_first" name="customer_first" type="text" required>
+				<div class="col-md-6">
+					<div class="form-style-1 user-pro" action="#" id="">
+						<form action="#" method="POST" class="user" enctype="multipart/form-data">
+							{% csrf_token %}
+							<h4>Order Details</h4>
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>First Name</label>
+									<input id="customer_first" name="customer_first" type="text" required>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Last Name</label>
-								<input id="customer_last" name="customer_last" type="text" required>
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Last Name</label>
+									<input id="customer_last" name="customer_last" type="text" required>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>DVD Title</label>
-								<input id="title" name="title" type="text" required>
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>DVD Title</label>
+									<input id="title" name="title" type="text" required>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Phone</label>
-								<input id="phone" name="phone" type="text" placeholder="0912-345-6789" pattern="^(09|\+639)\d{9}$" required>
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Phone</label>
+									<input id="phone" name="phone" type="text" placeholder="0912-345-6789" pattern="^(09|\+639)\d{9}$" required>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Email</label>
-								<input id="email" name="email" type="text" placeholder="sample@cit.edu">
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Email</label>
+									<input id="email" name="email" type="text" placeholder="sample@cit.edu">
+								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Quantity</label>
-								<input id="quantity" name="quantity" value="1" type="number" min="1" max="50" required>
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Quantity</label>
+									<input id="quantity" name="quantity" value="1" type="number" min="1" max="50" required>
+								</div>
 							</div>
-						</div>
-						
-						<div class="row">
-							<div class="col-md-2">
-								<input class="submit" type="submit" value="save">
+							
+							<div class="row">
+								<div class="col-md-4">
+									<input class="submit" type="submit" value="save">
+								</div>
 							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-		</div>
 <!-- footer section-->
 <footer class="ht-footer">
 	<div class="container">

@@ -37,6 +37,8 @@ class OrdersRegView(View):
                 quantity=quantity, phone=phone, email=email)
                 newObject.save()
                 return HttpResponse('Order added!')
+            else:
+                return HttpResponse('Order is invalid! Please input the correct details.')        
         
         else:
             print(newObject.errors)

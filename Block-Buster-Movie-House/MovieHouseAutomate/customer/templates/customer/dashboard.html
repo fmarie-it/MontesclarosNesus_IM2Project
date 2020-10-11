@@ -66,22 +66,6 @@
 					<a href="{% url 'index_view' %}"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119"
 							height="58"></a>
 				</div>
-
-				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav flex-child-menu menu-left">
-						<li class="hidden">
-							<a href="#page-top"></a>
-						</li>
-						<li class="dropdown first">
-							<a href="{% url 'index_view' %}" class="btn btn-default dropdown-toggle lv1">
-							Home</a>
-						</li>
-						<li class="dropdown first">
-							<a href="{% url 'orders:orderstable_view' %}" class="btn btn-default dropdown-toggle lv1">
-							Orders</a>
-						</li>
-					</ul>
-				</div>
 			</nav>
 		</div>
 	</header>
@@ -95,7 +79,8 @@
 						<h1>Dashboard</h1>
 						<ul class="breadcumb">
 							<li class="active"><a href="{% url 'index_view' %}">Home</a></li>
-							<li> <span class="ion-ios-arrow-right"></span>Dashboard</li>
+							<li> <span class="ion-ios-arrow-right"></span>Customer/DVD</li>
+							<li class="active"><a href="{% url 'orders:orderstable_view' %}"><span class="ion-ios-arrow-right"></span>Orders</a></li>
 						</ul>
 					</div>
 				</div>
