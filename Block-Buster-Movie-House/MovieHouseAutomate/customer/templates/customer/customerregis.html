@@ -125,30 +125,24 @@
 							Dashboard</a>
 						</li>
 						<li class="dropdown first">
+							<a a href="{% url 'orders:orderstable_view' %}" class="btn btn-default dropdown-toggle lv1">
+							Orders</a>
+						</li>
+						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							Registration <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
 								<li><a href="{% url 'customer:addcustomer_view' %}">Customer</a></li>
 								<li><a href="{% url 'dvd:adddvd_view' %}">DVD</a></li>
+								<li><a href="{% url 'orders:orders_view' %}">Orders</a></li>
 							</ul>
-						</li>
-						<li class="dropdown first">
-							<a a href="{% url 'orders:orders_view' %}" class="btn btn-default dropdown-toggle lv1">
-							Orders</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="{% url 'landing_view' %}">Landing</a></li>
-							</ul>
 						</li>
 						<li class="loginLink"><a href="#">About Us</a></li>
-						<li class="btn signupLink"><a href="#">Contact Us</a></li>
+						<li class="loginLink"><a href="#">Contact Us</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
@@ -221,7 +215,7 @@
 									<div class="row">
 										<div class="col-md-6 form-it">
 											<label>Phone Number</label>
-											<input name="phone" type="tel" placeholder="+639123456789" pattern="^(09|\+639)\d{9}$" required>
+											<input name="phone" type="tel" placeholder="0912-345-6789" pattern="^(09|\+639)\d{9}$" required>
 										</div>
 										<div class="col-md-6 form-it">
 											<label>Email</label>

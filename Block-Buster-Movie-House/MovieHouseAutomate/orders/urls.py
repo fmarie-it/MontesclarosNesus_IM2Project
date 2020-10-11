@@ -1,12 +1,11 @@
-#from django.contrib import admin
 from django.urls import path
-from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from . import views
 
 app_name = 'orders'
 urlpatterns = [
-    path('orders',views.OrdersView.as_view(), name="orders_view"),
-    #path('dashboard',views.DashboardView.as_view(), name="dashboard_view"),
+    path('orders',views.OrdersRegView.as_view(), name="orders_view"),
+    path('orderstable',views.OrdersView.as_view(), name="orderstable_view"),
 ]
 
 urlpatterns += staticfiles_urlpatterns() 

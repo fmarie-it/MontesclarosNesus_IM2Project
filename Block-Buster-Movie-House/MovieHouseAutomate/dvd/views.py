@@ -6,7 +6,7 @@ from .models import *
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
-# Create your views here.Arrange in alphabetical order
+# Create your views here. Arrange in alphabetical order
 class DVDRegView(View):
     def get(self, request):
         return render(request, 'dvd/dvdregis.html')
@@ -14,7 +14,6 @@ class DVDRegView(View):
     def post(self, request):
         form = DVDForm(request.POST)
         if form.is_valid():
-            #request picture
 
             genre = request.POST.get("genre")
             title = request.POST.get("title")

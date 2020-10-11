@@ -123,6 +123,10 @@
 							Dashboard</a>
 						</li>
 						<li class="dropdown first">
+							<a a href="{% url 'orders:orderstable_view' %}" class="btn btn-default dropdown-toggle lv1">
+							Orders</a>
+						</li>
+						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							Registration <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -131,22 +135,10 @@
 								<li><a href="{% url 'dvd:adddvd_view' %}">DVD</a></li>
 							</ul>
 						</li>
-						<li class="dropdown first">
-							<a a href="{% url 'orders:orders_view' %}" class="btn btn-default dropdown-toggle lv1">
-							Orders</a>
-						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="{% url 'landing_view' %}">Landing</a></li>
-							</ul>
-						</li>
 						<li class="loginLink"><a href="#">About Us</a></li>
-						<li class="btn signupLink"><a href="#">Contact Us</a></li>
+						<li class="loginLink"><a href="#">Contact Us</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
@@ -158,7 +150,7 @@
 <div class="hero user-hero">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-12">
 				<div class="hero-ct">
 					<h1>Order Form</h1>
 					<ul class="breadcumb">
@@ -173,78 +165,69 @@
 		<div class="buster-light">
 <div class="page-single">
 	<div class="container">
-		<div class="row ipad-width">	
+		<div class="row ipad-width">
+			
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="user-information">
+					<div class="user-img">
+						<a href="#"><img src="{% static 'images/uploads/user-img.png' %}" alt=""><br></a>
+						<a href="#" class="redbtn">Change avatar</a>
+					</div>
+					<div class="user-fav">
+						<p>Customer Details</p>
+						<ul>
+							<li  class="active"><a href="">Profile</a></li>
+						</ul>
+						<ul>
+							<li  class="active"><a href="">Settings</a></li>
+						</ul>
+						<ul>
+							<li  class="active"><a href="{% url 'landing_view' %}">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="form-style-1 user-pro" action="#">
+				<div class="form-style-1 user-pro" action="#" id="">
 					<form action="#" method="POST" class="user" enctype="multipart/form-data">
 						{% csrf_token %}
 						<h4>Personal Information</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Date Registered</label>
-								<input name="date_registered" type="Date" required>
+								<label>First Name</label>
+								<input id="customer_first" name="customer_first" type="text" required>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Director First Name</label>
-								<input name="director_firstname" type="text" placeholder="First Name" required>
+								<label>Last Name</label>
+								<input id="customer_last" name="customer_last" type="text" required>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Director Last Name</label>
-								<input name="director_lastname" type="text" placeholder="Last Name" required>
+								<label>DVD Title</label>
+								<input id="title" name="title" type="text" required>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>SKU</label>
-								<input name="sku" type="text" placeholder="ABC123" readonly>
+								<label>Phone</label>
+								<input id="phone" name="phone" type="text" placeholder="0912-345-6789" pattern="^(09|\+639)\d{9}$" required>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Genre</label>
-								<input name="genre" type="text" placeholder="Horror" required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Title</label>
-								<input name="title" type="text" placeholder="Fatima and Kent's Adventure" required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Release Date</label>
-								<input name="release_date" type="date" required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Cast</label>
-								<input name="cast" type="text" placeholder="Firstname Lastname," required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 form-it">
-								<label>Price</label>
-								<input name="price" type="number" step="1.00" placeholder="0.00" min="1" max="500" required>
+								<label>Email</label>
+								<input id="email" name="email" type="text" placeholder="sample@cit.edu">
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>No. of Items</label>
-								<input name="no_items" type="number" min="1" max="500" required>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-12 form-it">
-								<label>DVD Image</label>
-								<input name="dimg" type="file" id="picture" accept="image/*" required multiple>
+								<label>Quantity</label>
+								<input id="quantity" name="quantity" value="1" type="number" min="1" max="50" required>
 							</div>
 						</div>
 						
@@ -304,7 +287,7 @@
 	</div>
 	<div class="ft-copyright">
 		<div class="ft-left">
-			<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+			<p><a target="_blank" href="https://www.nhentai.net">Templates Hub</a></p>
 		</div>
 		<div class="backtotop">
 			<p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>

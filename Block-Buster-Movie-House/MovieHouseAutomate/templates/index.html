@@ -117,11 +117,12 @@
 							<a href="#page-top"></a>
 						</li>
 						<li class="dropdown first">
-							<a href="#" class="btn btn-default dropdown-toggle lv1">Home</a>
-						</li>
-						<li class="dropdown first">
 							<a a href="{% url 'customer:dashboard_view' %}" class="btn btn-default dropdown-toggle lv1">
 							Dashboard</a>
+						</li>
+						<li class="dropdown first">
+							<a a href="{% url 'orders:orderstable_view' %}" class="btn btn-default dropdown-toggle lv1">
+							Orders</a>
 						</li>
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
@@ -130,11 +131,8 @@
 							<ul class="dropdown-menu level1">
 								<li><a href="{% url 'customer:addcustomer_view' %}">Customer</a></li>
 								<li><a href="{% url 'dvd:adddvd_view' %}">DVD</a></li>
+								<li><a href="{% url 'orders:orders_view' %}">Orders</a></li>
 							</ul>
-						</li>
-						<li class="dropdown first">
-							<a a href="{% url 'orders:orders_view' %}" class="btn btn-default dropdown-toggle lv1">
-							Orders</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
@@ -147,7 +145,7 @@
 							</ul>
 						</li>
 						<li class="loginLink"><a href="#">About Us</a></li>
-						<li class="btn signupLink"><a href="#">Contact Us</a></li>
+						<li class="loginLink"><a href="#">Contact Us</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->

@@ -1,8 +1,8 @@
 from django import forms
 from .models import *
 
-# class OrderForm(forms.ModelForm):
+class OrdersForm(forms.ModelForm):
 	
-# 	class Meta:
-# 		model = Order
-# 		fields = ('order_id', 'order_date')
+	class Meta:
+		model = Order
+		fields = ('customer_first','customer_last')
