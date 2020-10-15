@@ -140,29 +140,27 @@
 									</button>
 								</div>
 							</td>
-
+						</tr>	
 							<!-- Delete Customer Modal -->
-							<div class="modal fade" id="deleteCustomer-{{entry.customer_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
+							<div class="modal fade" id="deleteCustomer-{{entry.customer_id}}">
+								<div class="modal-dialog modal-l">
 			                      <div class="modal-content">
+			                      	<!-- Modal Header -->
 			                        <div class="modal-header">
-			                          <h5 class="modal-title" id="exampleModalLabel">DELETE RECORD</h5>
-			                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			                            <span aria-hidden="true">&times;</span>
-			                          </button>
+			                          <h5 class="modal-title">DELETE RECORD</h5>
+			                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
 			                        </div>
 									<!-- Modal body -->
 									<form id="deleteForm" method="POST">
 									{% csrf_token %}
-									<div class="modal-body">
-										<!-- Question  -->
-										<input type="number" class="form-control" id="customer_id" name="customer_id" value={{entry.customer_id}} required hidden>
-										<h6>Are you sure you want to delete this record?</h6>
-									</div>
-									<div class="modal-footer">	
-										<button id="delete_customer" type="submit" name="delete_customer" class="btn btn-danger mt-3 float-right btn-md">Yes</button>
-										<button id="delete_no" type="button" class="btn btn-secondary mt-3 float-right btn-md ml-3" data-dismiss="modal">No</button>
-									</div>
+										<div class="modal-body">
+											<!-- Question  -->
+											<!-- Hidden id number for confirming delete -->
+											<input type="number" class="form-control" id="customer_id" name="customer_id" value={{entry.customer_id}} required hidden>
+											<h6>Are you sure you want to delete this record?</h6>
+											<button id="delete_no" type="button" class="btn btn-secondary mt-3 float-right btn-md ml-3" data-dismiss="modal">No</button>
+											<button id="delete_customer" type="submit" name="delete_customer" class="btn btn-danger mt-3 float-right btn-md">Yes</button>
+										</div>
 									</form>
 								  </div>
 								</div>
@@ -329,12 +327,9 @@
 									</div>
 								</div>
 							</div>
-						</tr>
-					</tbody>
-					<tfoot>
 						{% endif %}
 					{% endfor %}
-					</tfoot>
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -390,7 +385,7 @@
 									</button>
 								</div>
 							</td>
-							
+						</tr>	
 							<!-- Delete DVD Modal -->
 							<div class="modal fade" id="deleteDVD-{{entry.sku}}">
 								<div class="modal-dialog modal-l">
@@ -530,12 +525,9 @@
 									</div>
 								</div>
 							</div>
-						</tr>
-					</tbody>
-					<tfoot>
 						{% endif %}
 					{% endfor %}
-					</tfoot>
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -656,9 +648,7 @@
 				table.draw();
 			});
 		});
-	</script>
-	
-	<script>
+
 		$(document).ready(function () {
 			let initialTableSettings = {
 				searching: true,

@@ -46,18 +46,19 @@
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>Login</h3>
-        <form method="post" action="#">
+        <form method="get" action="{% url 'index_view' %}">
+        {% csrf_token %}
         	<div class="row">
         		 <label for="username">
                     Username:
-                    <input type="text" name="username" id="username" placeholder="Fatima Marie Montesclaros" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+                    <input type="text" name="username" id="username" placeholder="Username" pattern="^[a-zA-Z]{1-15}$" required="required" />
                 </label>
         	</div>
            
             <div class="row">
             	<label for="password">
                     Password:
-                    <input type="password" name="password" id="password" placeholder="******" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input type="password" name="password" id="password" placeholder="******" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required="required" />
                 </label>
             </div>
             <div class="row">
@@ -87,11 +88,10 @@
 	<a href="{% url 'index_view' %}"><img src="{% static 'images/logo1.png' %}" alt="Logo"></a>
 	<div class="row landing-hero-text">
 		<h2>MOST COMPLETED</h2>
-		<h2 class="text-yellow">FILM REVIEW  &middot;  MOVIE DATABASE</h2>
-		<h2>HTML TEMPLATE</h2>
+		<h2 class="text-yellow">BLOCK  &middot;  BUSTER</h2>
+		<h2>MOVIEHOUSE DATABASE</h2>
 	</div>
     <a href="#" class="redbtn loginLink">LOG In</a> 
-    <a href="{% url 'customer:addcustomer_view' %}" class="redbtn">ADD CUSTOMER</a>
 </div> 
 
 <!-- footer v3 section-->

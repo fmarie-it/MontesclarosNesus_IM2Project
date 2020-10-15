@@ -125,10 +125,8 @@
                             <td>{{entry.quantity}}</td>
                             <td>{{entry.sent}}</td>
 						</tr>
+					{% endfor %}	
 					</tbody>
-					<tfoot>
-					{% endfor %}
-					</tfoot>
 				</table>
 			</div>
 		</div>
@@ -221,49 +219,6 @@
 			}
 			//Creates the table with the settings above
 			let table = $('#ordersTable').DataTable(initialTableSettings);
-
-			$("input[type=date][name$=min]").val(new Date(0).toISOString().slice(0, 10));
-			$("input[type=date][name$=max]").val(new Date().toISOString().slice(0, 10));
-			//This is the logic that we will use in order to filter the table
-			let dateRangeFunc = function (settings, data, dataIndex) {
-				let min = new Date($('#min').val()).getTime();
-				let max = new Date($('#max').val()).getTime();
-				let date = new Date(data[4]).getTime(); // use data for the column to range filter
-				if (min <= date && date <= max) {
-					return true;
-				}
-				return false;
-			}
-			//Sooo, here we will put the custom date range filter to the table
-			$.fn.dataTable.ext.search.push(dateRangeFunc);
-
-			//NOW, we need to refresh the table each time so that we could see the filtered data
-			$('#min, #max').change(function () {
-				table.draw();
-			});
-
-			//Resetting the table
-			$('#resetDateRange').click(function () {
-				$("input[type=date][name$=min]").val(new Date(0).toISOString().slice(0, 10));
-				$("input[type=date][name$=max]").val(new Date().toISOString().slice(0, 10));
-				table.draw();
-			});
-		});
-	</script>
-	
-	<script>
-		$(document).ready(function () {
-			let initialTableSettings = {
-				searching: true,
-				//Enables print , excel export functionality
-				buttons: [
-					'print', 'copy', 'pdf', 'excel'
-				],
-				//Determines how the search, buttons , paginations are shown in your datatable refer to datatables DOM documentation
-				dom: 'Bfrtip'
-			}
-			//Creates the table with the settings above
-			let table = $('#dvdTable').DataTable(initialTableSettings);
 
 			$("input[type=date][name$=min]").val(new Date(0).toISOString().slice(0, 10));
 			$("input[type=date][name$=max]").val(new Date().toISOString().slice(0, 10));

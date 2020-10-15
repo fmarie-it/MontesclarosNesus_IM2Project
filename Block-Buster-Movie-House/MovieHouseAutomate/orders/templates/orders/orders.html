@@ -68,7 +68,7 @@
             <div class="row">
                 <label for="email-2">
                     your email:
-                    <input type="password" name="email" id="email-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+                    <input type="email" name="email" id="email-2" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
                 </label>
             </div>
             <div class="row">
@@ -138,8 +138,12 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
+						</li>
 						<li class="loginLink"><a href="#">About Us</a></li>
-						<li class="loginLink"><a href="#">Contact Us</a></li>
+						<li class="signupLink"><a href="#">Contact Us</a></li>
+						<li class="dropdown first btn">
+							<a href="{% url 'landing_view' %}" class="btn btn-default dropdown-toggle lv1">Logout</a>
+						</li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
